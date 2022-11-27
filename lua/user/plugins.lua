@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use 'goolord/alpha-nvim'
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use 'nvim-lualine/lualine.nvim'
+  use "folke/which-key.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

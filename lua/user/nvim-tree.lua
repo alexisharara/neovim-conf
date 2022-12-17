@@ -69,7 +69,7 @@ nvim_tree.setup {
         relativenumber = false,
     },
     actions = {
-        open_file = { 
+        open_file = {
             resize_window = true,
             window_picker = { enable = true },
             quit_on_open = true,

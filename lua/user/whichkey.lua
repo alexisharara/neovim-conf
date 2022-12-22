@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-    ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
+    ["/"] = { "<cmd>lua require('Comment').toggle_current_linewise()<CR>", "Comment" },
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["b"] = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -88,7 +88,7 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["f"] = {
         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -104,6 +104,19 @@ local mappings = {
         s = { "<cmd>PackerSync<cr>", "Sync" },
         S = { "<cmd>PackerStatus<cr>", "Status" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
+    },
+
+    d = {
+        name = "DAP",
+        s = { "<cmd>lua require('dap').continue();require('dapui').toggle({}); vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>=', false, true, true), 'n', false)<cr>", "Start Debugging"},
+        l = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Toggle Breakpoint"},
+        c = { "<cmd>lua require('dap').dap.continue()<cr>", "Continue"},
+        n = { "<cmd>lua require('dap').step_over()<cr>", "Step Over"},
+        i = { "<cmd>lua require('dap').step_into()<cr>", "Step Into"},
+        o = { "<cmd>lua require('dap').step_out()<cr>", "Step Out"},
+        C = { "<cmd>lua require('dap').clear_breakpoints()<cr>", "Clear Breakpoint"},
+        e = { "<cmd>lua require('dap').clear_breakpoints(); require('dapui').toggle({});require('dap').terminate();  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-w>=', false, true, true), 'n', false) <cr>", "End Debugging"},
+
     },
 
     g = {

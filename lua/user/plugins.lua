@@ -70,6 +70,11 @@ return packer.startup(function(use)
 	use "hrsh7th/cmp-nvim-lsp"
 	use "hrsh7th/cmp-nvim-lua"
 
+    -- dap
+    use "mfussenegger/nvim-dap" 
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use "jayp0521/mason-nvim-dap.nvim"
+
 	-- snippets
 	use "L3MON4D3/LuaSnip" --snippet engine
 	use "rafamadriz/friendly-snippets" -- a bunch of snippets to use

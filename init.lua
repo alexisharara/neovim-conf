@@ -1,22 +1,21 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.nvim-tree"
-require "user.toggleterm"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.lualine"
-require "user.whichkey"
-require "user.bufferline"
-require "user.lsp-lines"
-require "user.colorizer"
-require "user.nvim-dap"
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.maplocalleader = " "
+
+require("lazy").setup("plugins")
+
+require "config.options"
+require "config.keymaps"

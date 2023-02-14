@@ -68,9 +68,9 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-keymap("n", "<leader>r", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ preview = false }))<cr>", opts)
-keymap("n", "li", "<cmd>Telescope live_grep<cr>", opts)
-
--- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>g', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>h', builtin.help_tags, opts)
 

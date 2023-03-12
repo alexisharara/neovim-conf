@@ -100,7 +100,7 @@ return {{
                         Method = " m ",
                         Module = "  ",
                         Namespace = "  ",
-                        Null =  " ﳠ ",
+                        Null = " ﳠ ",
                         Number = " ",
                         Object = " ",
                         Operator = "  ",

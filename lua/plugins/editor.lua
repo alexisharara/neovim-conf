@@ -1,41 +1,41 @@
 icons = {
-    kinds ={
-                        Array = "   ",
-                        Boolean = "   ",
-                        Class = "  ",
-                        Color = "  ",
-                        Constant = "  ",
-                        Constructor = "  ",
-                        Copilot = "  ",
-                        Enum = "  ",
-                        EnumMember = "  ",
-                        Event = "  ",
-                        Field = "  ",
-                        File = "  ",
-                        Folder = "  ",
-                        Function = "  ",
-                        Interface = "  ",
-                        Key = "   ",
-                        Keyword = "  ",
-                        Method = " m ",
-                        Module = "  ",
-                        Namespace = "  ",
-                        Null =  " ﳠ ",
-                        Number = " ",
-                        Object = " ",
-                        Operator = "  ",
-                        Package = " ",
-                        Property = "  ",
-                        Reference = "  ",
-                        Snippet = "  ",
-                        String = " ",
-                        Struct = "  ",
-                        Text = "  ",
-                        TypeParameter = "  ",
-                        Unit = "  ",
-                        Value = "  ",
-                        Variable = "  "
-    }, 
+    kinds = {
+        Array = "   ",
+        Boolean = "   ",
+        Class = "  ",
+        Color = "  ",
+        Constant = "  ",
+        Constructor = "  ",
+        Copilot = "  ",
+        Enum = "  ",
+        EnumMember = "  ",
+        Event = "  ",
+        Field = "  ",
+        File = "  ",
+        Folder = "  ",
+        Function = "  ",
+        Interface = "  ",
+        Key = "   ",
+        Keyword = "  ",
+        Method = " m ",
+        Module = "  ",
+        Namespace = "  ",
+        Null = " ﳠ ",
+        Number = " ",
+        Object = " ",
+        Operator = "  ",
+        Package = " ",
+        Property = "  ",
+        Reference = "  ",
+        Snippet = "  ",
+        String = " ",
+        Struct = "  ",
+        Text = "  ",
+        TypeParameter = "  ",
+        Unit = "  ",
+        Value = "  ",
+        Variable = "  "
+    }
 }
 return {{
     "nvim-neo-tree/neo-tree.nvim",
@@ -549,26 +549,23 @@ return {{
         "<cmd>TroubleToggle quickfix<cr>",
         desc = "Quickfix List (Trouble)"
     }}
-},
-{
+}, {
     "SmiteshP/nvim-navic",
     lazy = true,
     init = function()
-      vim.g.navic_silence = true
-      require("config.util").on_attach(function(client, buffer)
-        if client.server_capabilities.documentSymbolProvider then
-          require("nvim-navic").attach(client, buffer)
-        end
-      end)
+        vim.g.navic_silence = true
+        require("config.util").on_attach(function(client, buffer)
+            if client.server_capabilities.documentSymbolProvider then
+                require("nvim-navic").attach(client, buffer)
+            end
+        end)
     end,
     opts = function()
-      return {
-        separator = " ",
-        highlight = true,
-        depth_limit = 5,
-        icons = icons.kinds,
-      }
-    end,
-  }
-
-}
+        return {
+            separator = " ",
+            highlight = true,
+            depth_limit = 5,
+            icons = icons.kinds
+        }
+    end
+}}

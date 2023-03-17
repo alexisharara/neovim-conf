@@ -23,7 +23,7 @@ return {{
             enable = true,
             enable_autocmd = false
         },
-        ensure_installed = "all",
+        ensure_installed = {"go"} ,
         incremental_selection = {
             enable = true,
             keymaps = {
